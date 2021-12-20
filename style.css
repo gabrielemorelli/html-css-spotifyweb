@@ -24,19 +24,20 @@ header{
     justify-content: flex-end;
 }
 
-
+i{
+    color: white;
+}
 
     
 
 
  main{
     background-color:rgba(20,25,34,255);
-    position: fixed;
-    top: 100px;
-    left: 200px;
-    width: calc(100vw - 200px);
+   padding-left: 200px;
+    padding-top: 100px;
+    width: 100%;
     height: 1200px;
-    overflow-y: scroll;
+   
  }
 
  main nav{
@@ -50,20 +51,8 @@ header{
      padding: 20px;
  }
 
- .row{
-    width: 15%;
-    display: flex;
-    flex-direction: row;
+ 
 
- }
-
- .row img{
-     width: 100%;
-     margin: 5px;
-     
-     
-
- }
 
 footer{
 position: fixed;
@@ -77,10 +66,10 @@ bottom: 0;
 
 @media screen and (max-width: 425px){
 .sidebar{
-    width: 50px;
+    width:50px;
 }
 main{
-    width: calc(100vw - 50px);
+    width: 100%;
 }
 header {
  width:calc(100% - 50px);   
@@ -88,30 +77,20 @@ header {
 
 }
 
-/*responsive*
+/*responsive*/
 
-@media  screen and (min-width: 800px){
+@media  screen and (min-width: 425px){
 
     main{
-        width: calc(40vw - 200px);
+        width: 100%;
     }
 
     header{
-        width: calc(40% - 200px);
+        width: calc(100% - 200px);
     }
     
     footer{
-        width: 50%;
+        width: 100%;
     }
 }
 
-
- @media screen and(max-width:900px){
-   main{
-     width: calc(50vw - 200px);
-    }
-
-    header{
-    width: calc(50% - 200px);
-     }
-  }
