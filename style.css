@@ -13,7 +13,7 @@
     left: 0;
 }
 header{
-    background-color: blanchedalmond;
+    background-color:rgba(8,11,18,255);  
     height: 100px;
     position: fixed;
     left: 200px;
@@ -23,18 +23,46 @@ header{
     display: flex;
     justify-content: flex-end;
 }
-.btn{
-    color: white;
-}
+
+
+
+    
+
 
  main{
-    background-color: blue;
+    background-color:rgba(20,25,34,255);
     position: fixed;
     top: 100px;
     left: 200px;
     width: calc(100vw - 200px);
-    height: 1200px
-    
+    height: 1200px;
+    overflow-y: scroll;
+ }
+
+ main nav{
+     display: flex;
+     justify-content: center;
+ }
+
+ ul li{
+     display: inline-block;
+     color: white;
+     padding: 20px;
+ }
+
+ .row{
+    width: 15%;
+    display: flex;
+    flex-direction: row;
+
+ }
+
+ .row img{
+     width: 100%;
+     margin: 5px;
+     
+     
+
  }
 
 footer{
@@ -44,3 +72,44 @@ height: 100px;
 background-color: red;
 bottom: 0;
 }
+
+/*responsive*/
+
+@media screen and (max-width: 600px){
+.sidebar{
+    width: 50px;
+}
+main{
+    width: calc(100vw - 50px);
+}
+header {
+ width:calc(100% - 50px);   
+}
+
+}
+
+@media (min-width: 800px){
+
+    main{
+        width: calc(40vw - 200px);
+    }
+
+    header{
+        width: calc(40% - 200px);
+    }
+    
+    footer{
+        width: 50%;
+    }
+}
+
+
+    @media (max-width:900px){
+        main{
+            width: calc(50vw - 200px);
+        }
+
+        header{
+            width: calc(50% - 200px);
+        }
+    }
