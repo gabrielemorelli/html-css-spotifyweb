@@ -73,9 +73,9 @@ background-color: red;
 bottom: 0;
 }
 
-/*responsive*/
 
-@media screen and (max-width: 600px){
+
+@media screen and (max-width: 425px){
 .sidebar{
     width: 50px;
 }
@@ -88,7 +88,9 @@ header {
 
 }
 
-@media (min-width: 800px){
+/*responsive*
+
+@media  screen and (min-width: 800px){
 
     main{
         width: calc(40vw - 200px);
@@ -104,12 +106,12 @@ header {
 }
 
 
-    @media (max-width:900px){
-        main{
-            width: calc(50vw - 200px);
-        }
-
-        header{
-            width: calc(50% - 200px);
-        }
+ @media screen and(max-width:900px){
+   main{
+     width: calc(50vw - 200px);
     }
+
+    header{
+    width: calc(50% - 200px);
+     }
+  }
