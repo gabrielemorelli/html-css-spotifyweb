@@ -3,7 +3,7 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+/*sidebar*/
 .sidebar{
     width: 200px;
     height: 100vh;
@@ -11,10 +11,56 @@
     position: fixed;
     top: 0;
     left: 0;
+    
 }
+
+.sidebar-top{
+    height: calc(100% - 200px);
+    display: flex;
+    flex-direction:column;
+    margin-top: 20px;
+    margin-left: 10px;
+ }
+
+
+
+ .logo img, .logo-mobile img{
+     width: 80%;
+ }
+
+
+ .sidebar-menu{
+     padding: 20px 0px;
+    
+ }
+
+ .sidebar-menu img{
+    width: 30px;
+    vertical-align: middle;
+ }
+
+ .sidebar-menu a {
+   text-decoration: none;
+     color: grey;
+     list-style-type: none;
+ }
+
+ .sidebar-lista{
+    overflow-y: auto;
+    color: grey;
+    line-height: 30px;
+}
+
+.sidebar-lista h3{
+    color: white;
+}
+ .sidebar-bottom{
+     height: 100px;
+ }
+
 header{
     background-color:rgba(8,11,18,255);  
-    height: 100px;
+    height: 50px;
     position: fixed;
     left: 200px;
     width:calc(100% - 200px);
@@ -34,7 +80,7 @@ i{
  main{
     background-color:rgba(20,25,34,255);
    padding-left: 200px;
-    padding-top: 100px;
+    padding-top: 50px;
     width: 100%;
     height: 1200px;
    
@@ -42,22 +88,40 @@ i{
 
  main nav{
      display: flex;
-     justify-content: center;
+     justify-content:center;
  }
 
- ul li{
+ nav ul li{
      display: inline-block;
      color: white;
      padding: 20px;
+     font-size: 12px;
  }
 
- 
+ .row{
+    display: flex;
+    flex-wrap: wrap;
+    color: white; 
+    
+ }
+
+ .menu-playlist{
+    width:16%;
+    margin:5px;
+  
+}
+
+.menu-playlist img{
+    width: 100%;
+    
+}
+
 
 
 footer{
 position: fixed;
-width: 100%;
-height: 100px;
+width: 90%;
+height: 50px;
 background-color: red;
 bottom: 0;
 }
