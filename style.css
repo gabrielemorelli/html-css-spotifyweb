@@ -3,35 +3,68 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+body{
+width: 100%;
+ height: 100vh;
+}
+
+main{
+    background-color:rgba(20,25,34,255);
+   height: calc(100% - 100px);
+      
+    }
+main::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
 /*sidebar*/
 .sidebar{
     width: 200px;
-    height: 100vh;
+    height: 100%;
     background-color:black;
-    position: fixed;
-    top: 0;
-    left: 0;
-    
+     float: left;
 }
 
+
+/*sidebar-top*/
 .sidebar-top{
-    height: calc(100% - 200px);
+    height: calc(100% - 100px);
     display: flex;
     flex-direction:column;
     margin-top: 20px;
     margin-left: 10px;
+    min-height: 400px;
  }
 
-
+ .sidebar-bottom{
+    height: 100px;
+    margin-left: 10px;
+}
 
  .logo img, .logo-mobile img{
      width: 80%;
  }
 
+ .logo-mobile{
+     display: none;
+     
+ }
 
  .sidebar-menu{
      padding: 20px 0px;
-    
+     font-size: 25px;
+ }
+
+ .sidebar-menu li{
+     border-left: 3px solid transparent;
+ }
+
+ .sidebar-menu li.active{
+     border-left: 3px solid #94dd25;
+   
  }
 
  .sidebar-menu img{
@@ -43,118 +76,490 @@
    text-decoration: none;
      color: grey;
      list-style-type: none;
+     opacity: 0.6;
+     font-size: 20px;
+ }
+
+ .sidebar-menu li:hover img, .sidebar-menu li:hover a{
+     color: white;
+     opacity: 1;
  }
 
  .sidebar-lista{
     overflow-y: auto;
     color: grey;
-    line-height: 30px;
+    line-height: 40px;
+    font-size: 20px;
+}
+
+.sidebar-lista a{
+    text-decoration: none;
+    color: grey;
 }
 
 .sidebar-lista h3{
     color: white;
 }
- .sidebar-bottom{
-     height: 100px;
- }
 
-header{
-    background-color:rgba(8,11,18,255);  
-    height: 50px;
-    position: fixed;
-    left: 200px;
-    width:calc(100% - 200px);
+.crea-playlist .piu{
+    font-size:40px;
+    color: black;
+    padding: 2px 10px ;
+    background-color: grey;
+    
+
 }
-.flex-header{
+.sidebar-lista a:hover, .crea-playlist:hover{
+    color: white;
+    opacity: 1;
+}
+
+.sidebar-lista ul li a:hover, .piu:hover{
+    color: white;
+    opacity: 1;
+}
+/*fine sidebar-top*/
+
+/*sidebar-bottom*/
+
+.sidebar-bottom .download{
+    border-bottom: 1px solid grey;
+    padding-bottom: 10px;
+    margin-right: 10px;
+}
+
+.sidebar-bottom .download a{
+    color: gray;
+    text-decoration: none;
+   }
+
+   .sidebar-bottom .download i{
+       margin-right:5px;
+   }
+
+.sidebar-bottom .user .user-img{
+    width: 10%;
+    height: 20%;
+    border-radius: 50%;
+    background-color: grey;
+    margin-right: 10px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.sidebar-bottom .user .user-img img{
+    width: 100%;
+}
+
+.sidebar-bottom .user{
     display: flex;
-    justify-content: flex-end;
+    align-items: center;
 }
 
-i{
+.user-name{
     color: white;
 }
 
-    
+.sidebar-bottom .download:hover a, .sidebar-bottom .download:hover i{
+    color: white;
+    opacity: 1;
+}
 
+.sidebar-menu li:hover img, .sidebar-menu li:hover a{
+    color: white;
+    opacity: 1;
+}
 
- main{
+/*fine sidebar-bottom*/
+
+/*fine sidebar*/
+
+.main-container{
+    width: calc(100% - 200px);
+    overflow-y: scroll;
+    height: 100%;
+    float: left;
     background-color:rgba(20,25,34,255);
-   padding-left: 200px;
-    padding-top: 50px;
-    width: 100%;
-    height: 1200px;
+}
+
+.contenuto{
+    padding-top: 60px;
+}
+ 
+
+/*inzio testata*/
    
+.testata{
+    background-color:rgba(8,11,18,255);  
+    height: 50px;
+    top: 0;
+    position: fixed;
+    left: 200px;
+    width:calc(100% - 200px);
+    line-height: 50px;
+   text-align: right;
+   }
+
+
+.btn{
+    border: 1px solid white;
+    border-radius:30px; 
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin-right: 20px;  
+    
+}
+
+.testata a.btn:hover  {
+    transform: scale(1);
+ 
+    display: inline-block;
+}
+
+
+/*fine testata*/
+
+/*inizio nav*/
+
+ .main-container nav{
+   text-align: center;
  }
 
- main nav{
-     display: flex;
-     justify-content:center;
+ nav ul li {
+  display: inline-block;
+ color: white;
  }
 
- nav ul li{
-     display: inline-block;
-     color: white;
-     padding: 20px;
-     font-size: 12px;
+ nav ul li a{
+     color: grey;
+     text-decoration: none;
+     text-transform: uppercase;
+     font-size: 13px;
+     padding: 0 10px;
+     position: relative;
  }
+
+nav li a.active::after{
+    content: "";
+    height: 2px;
+    width: 40px;
+    background-color: #94dd25;
+    position: absolute;
+    bottom: -3px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.contenuto nav li:hover a{
+    color: white;
+    opacity: 1;
+}
+
+/*fine nav*/
+
+/*inizo section receenti-creato-popolari*/
+ 
+ section{
+     margin-left: 20px;
+     margin-top: 20px;
+
+ }
+
+  #creato p, #popolari p{
+    margin-top: 10px;
+    margin-bottom: 20px;
+ }
+
+main h1{
+    color: white;
+    font-size: 30px;
+}
 
  .row{
     display: flex;
     flex-wrap: wrap;
-    color: white; 
-    
  }
 
- .menu-playlist{
-    width:16%;
-    margin:5px;
-  
+ 
+
+ .menu-playlist{ 
+ width:calc(100% / 6);
+ padding: 10px 10px 10px 0;
+ 
 }
 
-.menu-playlist img{
+.playlist-cover img{
     width: 100%;
-    
 }
 
+.row .menu-playlist .playlist-testo p{
+    color: grey;
+    font-size: 15px;;
+    text-align: center;
+}
 
+.playlist-testo{
+    margin-top: 10px;
+}
+
+.playlist-testo p{
+    margin-top: 20px;
+}
+
+.main-container p{
+    color: grey;
+}
+
+.row .menu-playlist .playlist-testo h3{
+    color: white;
+    text-align: center;
+}
+
+.playlist-cover{
+    position: relative;
+}
+
+.overlay-cover{
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0,0,0,0.5);
+     display: none;
+}
+
+.overlay-cover i{
+    font-size: 50px;
+    color: white;
+}
+
+.menu-playlist:hover .overlay-cover{
+    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#popolari .playlist-cover {
+    border-radius: 50%;
+    overflow: hidden;
+}
+/*fine section receni-popolari-creato*/
+/*fine main*/
+
+/*inzio footer*/
 
 footer{
+height: 100px;
+background-color: #333;
 position: fixed;
-width: 90%;
-height: 50px;
-background-color: red;
 bottom: 0;
+display: flex;
+flex-direction: row;
+align-items:center;
+justify-content: space-between;
+position: relative;
 }
 
 
+footer .cover img{
+    width: 100%;
+}
+
+footer .album, footer .audio{
+    width: 250px;
+}
+
+footer .album{
+   display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.cover{
+    width: 20%;
+}
+
+.title{
+    width: 50%;
+    margin-left: 10px;
+}
+
+footer .title a, footer .title a{
+    text-decoration: none;
+    color: white;
+}
+
+.title p:hover a{
+    text-decoration: underline;
+}
+
+.album .icon i{
+    padding: 5px;
+    text-decoration: none;
+    color: grey;
+    display: flex;
+    flex-direction: column;
+}
+
+ .album .icon a:hover i{
+     color: white;
+ }
+footer .audio ul{
+display: flex;
+align-items: center;
+}
+
+footer .audio i{
+    margin: 10px;
+}
+
+footer .audio li{
+    list-style: none;
+    color: white;
+}
+
+footer .controller{
+    width: 50%;
+}
+
+footer .controller ul{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+footer .controller li{
+list-style-type: none;
+}
+
+.menu-list i{
+    margin: 10px;
+    color: white;
+}
+
+.far.fa-play-circle{
+    font-size: 40px;
+}
+
+.menu-list .fa-play-circle:hover {
+transform: scale(1.2);
+display: inline-block;
+}
+
+.controller .time{
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+
+.time .current-time, .time .total-time{
+    color: white;
+    font-size:12px;
+    text-align: center;
+}
+
+.progress-bar{
+    width: 80%;
+    background-color: grey;
+    height: 5px;
+    border-radius: 5px;
+}
+
+ .progress-current{
+    width:20%;
+    height:100%;
+    background-color: white;
+    border-radius: 5px;
+    position: relative;
+}
+
+ .cursor{
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+    right: 0;
+    transform: translateY(-33%);
+    display: none;
+}
+
+.progress-bar:hover .cursor{
+    display: block;
+}
+
+.progress-bar:hover .progress-current{
+    background-color: greenyellow;
+}
+
+
+.progress-container{
+    width: 80%;
+}
+
+/*fine footer*/
+
+/*resposive mobile*/
 
 @media screen and (max-width: 425px){
 .sidebar{
     width:50px;
+  
+   }
+   
+.main-container{
+    width:calc(100% - 50px);
 }
-main{
-    width: 100%;
-}
-header {
+
+.testata {
  width:calc(100% - 50px);   
+left: 50px;
+}
+
+.logo-mobile{
+    display: block;
+}
+
+.logo{
+    display: none;
+}
+.sidebar-lista{
+    display: none;
+}
+
+.sidebar-bottom{
+    display: none;
+}
+.sidebar-menu a span {
+    display: none; 
+}
+.menu-playlist{ 
+    width:calc(100% / 2);
+    padding: 10px 10px 10px 0;
 }
 
 }
 
-/*responsive*/
 
-@media  screen and (min-width: 425px){
 
-    main{
+/*responsive  tablet*/
+
+@media  screen and (max-width: 768px){
+  
+    .main {
         width: 100%;
-    }
-
-    header{
-        width: calc(100% - 200px);
-    }
-    
+    }    
     footer{
         width: 100%;
     }
-}
 
+    .menu-playlist{ 
+        width:calc(100% / 2);
+        padding: 10px 10px 10px 0;
+    }
+        
+}
